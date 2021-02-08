@@ -1,19 +1,18 @@
-import * as mongoose from 'mongoose';
+import * as mongoose from "mongoose";
 
-declare module 'egg' {
-
+declare module "egg" {
   type MongooseModels = {
-    [key: string]: mongoose.Model<any>
+    [key: string]: mongoose.Model<any>;
   };
 
   type MongooseSingleton = {
-    clients: Map<string, mongoose.Connection>,
-    get (id: string) : mongoose.Connection
+    clients: Map<string, mongoose.Connection>;
+    get(id: string): mongoose.Connection;
   };
 
   type MongooseConfig = {
-    url: string,
-    options?: mongoose.ConnectionOptions
+    url: string;
+    options?: mongoose.ConnectionOptions;
   };
 
   // extend app
@@ -31,13 +30,13 @@ declare module 'egg' {
   // extend your config
   interface EggAppConfig {
     mongoose: {
-      url?: string,
-      options?: mongoose.ConnectionOptions,
-      client?: MongooseConfig,
+      url?: string;
+      options?: mongoose.ConnectionOptions;
+      client?: MongooseConfig;
+      modelPath?: string;
       clients?: {
-        [key: string]: MongooseConfig
-      }
+        [key: string]: MongooseConfig;
+      };
     };
   }
-
 }

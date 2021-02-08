@@ -1,6 +1,6 @@
 {
   "name": "@mumuimp/egg-mongoose",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "egg mongoose plugin",
   "eggPlugin": {
     "name": "mongoose"
